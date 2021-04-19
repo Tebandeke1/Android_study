@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:baselineAligned="false"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+    
+    <!-- the static masterListFragment  -->
+    
+    <fragment
+        android:id="@+id/master_list_fragment"
+        android:name="com.tabutech.advancedone.ui.MasterListFragment"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"/>
+
+    <!-- a small divider -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#030304"/>
+
+    <!-- a linear layout that arrange all three body parts vertically -->
+    <LinearLayout
+        android:id="@+id/android_me_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp">
+
+        <!-- this first frame layout is for head in android_me -->
+        <FrameLayout
+            android:id="@+id/head_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/body_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/leg_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

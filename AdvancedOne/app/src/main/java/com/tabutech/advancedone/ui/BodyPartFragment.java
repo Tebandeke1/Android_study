@@ -20,9 +20,10 @@ public class BodyPartFragment  extends Fragment {
     private static final String TAG = "BodyPartFragment";
 
 
-    //these strings are for saved instances
-    private static String savedImage;
-    private static String savedIndex;
+    // Final Strings to store state information about the list of images and list index
+    public static final String IMAGE_ID_LIST = "image_ids";
+    public static final String LIST_INDEX = "list_index";
+
     private List<Integer> imageIds;
     private int mListIndex;
 
@@ -40,8 +41,8 @@ public class BodyPartFragment  extends Fragment {
 
         //this helps in bringing out the saved state variables
         if (savedInstanceState != null){
-            imageIds = savedInstanceState.getIntegerArrayList(savedImage);
-            mListIndex = savedInstanceState.getInt(savedIndex);
+            imageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
+            mListIndex = savedInstanceState.getInt(LIST_INDEX);
         }
 
         //inflate the android_me fragment layout
@@ -82,15 +83,15 @@ public class BodyPartFragment  extends Fragment {
         this.imageIds = imageIds;
     }
 
-    public void setmListIndex(int mListIndex) {
+    public void setListIndex(int mListIndex) {
         this.mListIndex = mListIndex;
     }
 
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putIntegerArrayList(savedImage, (ArrayList <Integer>) imageIds);
-        outState.putInt(savedIndex,mListIndex);
+        outState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList <Integer>) imageIds);
+        outState.putInt(LIST_INDEX,mListIndex);
 
     }
 }
